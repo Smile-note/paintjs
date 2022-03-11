@@ -1,6 +1,7 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
+const randomColor = document.querySelector(".jsRandomColor");
 const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
@@ -44,6 +45,14 @@ function handleColorClick(event) {
   const color = event.target.style.backgroundColor;
   ctx.strokeStyle = color;
   ctx.fillStyle = color;
+}
+
+function handleRandomColorClick(event) {
+  const randomHEX = Math.random().toString(16).substring(2, 8);
+  randomColor.style = "background-color: #" + randomHEX;
+  const randomColorrgb = event.target.style.backgroundColor;
+  ctx.strokeStyle = randomColorrgb;
+  ctx.fillStyle = randomColorrgb;
 }
 
 function handleRangeChange(event) {
@@ -102,4 +111,8 @@ if (mode) {
 
 if (saveBtn) {
   saveBtn.addEventListener("click", handleSaveClick);
+}
+
+if (randomColor) {
+  randomColor.addEventListener("click", handleRandomColorClick);
 }

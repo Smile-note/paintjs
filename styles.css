@@ -53,6 +53,12 @@ body {
   display: flex;
 }
 
+.controls__random-color {
+  background-image: url("https://e7.pngegg.com/pngimages/539/970/png-clipart-color-wheel-complementary-colors-primary-color-magenta-colours-miscellaneous-purple-thumbnail.png");
+  background-position: center center;
+  background-size: cover;
+}
+
 .controls__colors .controls__color {
   width: 50px;
   height: 50px;
