@@ -38,6 +38,7 @@ function onMouseMove(event) {
     ctx.beginPath();
     ctx.moveTo(x, y);
   } else {
+    ctx.lineCap = "round";
     ctx.lineTo(x, y);
     ctx.stroke();
   }
