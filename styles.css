@@ -45,10 +45,6 @@ i {
   cursor: url(img/fill.png), auto;
 }
 
-.cursor__brush {
-  cursor: url("http://www.rw-designer.com/cursor-extern.php?id=61839"), auto;
-}
-
 .controls .controls__btns {
   margin-bottom: 30px;
 }
