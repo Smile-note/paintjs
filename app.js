@@ -3,13 +3,15 @@ const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
 const randomColor = document.querySelector(".jsRandomColor");
 const range = document.getElementById("jsRange");
-const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
 const clearBtn = document.getElementById("jsClear");
+const brushIcon = document.getElementById("jsBrushIcon");
+const fillIcon = document.getElementById("jsFillIcon");
 
 const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 700;
 const WHITE_COLOR = "white";
+const CHANGE_GRAYICON_CLASSNAME = "icon-gray";
 
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
@@ -63,14 +65,16 @@ function handleRangeChange(event) {
   ctx.lineWidth = size;
 }
 
-function handleModeClick() {
-  if (filling === true) {
-    filling = false;
-    mode.innerText = "Fill";
-  } else {
-    filling = true;
-    mode.innerText = "Paint";
-  }
+function fillIconClick() {
+  filling = true;
+  brushIcon.classList.add(CHANGE_GRAYICON_CLASSNAME);
+  fillIcon.classList.remove(CHANGE_GRAYICON_CLASSNAME);
+}
+
+function brushIconClick() {
+  filling = false;
+  fillIcon.classList.add(CHANGE_GRAYICON_CLASSNAME);
+  brushIcon.classList.remove(CHANGE_GRAYICON_CLASSNAME);
 }
 
 function handleCanvasClick() {
@@ -113,8 +117,12 @@ if (range) {
   range.addEventListener("input", handleRangeChange);
 }
 
-if (mode) {
-  mode.addEventListener("click", handleModeClick);
+if (fillIcon) {
+  fillIcon.addEventListener("click", fillIconClick);
+}
+
+if (brushIcon) {
+  brushIcon.addEventListener("click", brushIconClick);
 }
 
 if (saveBtn) {
