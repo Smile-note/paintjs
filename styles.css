@@ -41,6 +41,14 @@ i {
   border: 2px solid rgba(0, 0, 0, 0.2);
 }
 
+.cursor__fill {
+  cursor: url(img/fill.png), auto;
+}
+
+.cursor__brush {
+  cursor: url("http://www.rw-designer.com/cursor-extern.php?id=61839"), auto;
+}
+
 .controls .controls__btns {
   margin-bottom: 30px;
 }

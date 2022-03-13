@@ -69,12 +69,16 @@ function fillIconClick() {
   filling = true;
   brushIcon.classList.add(CHANGE_GRAYICON_CLASSNAME);
   fillIcon.classList.remove(CHANGE_GRAYICON_CLASSNAME);
+  canvas.classList.remove("cursor__brush");
+  canvas.classList.add("cursor__fill");
 }
 
 function brushIconClick() {
   filling = false;
   fillIcon.classList.add(CHANGE_GRAYICON_CLASSNAME);
   brushIcon.classList.remove(CHANGE_GRAYICON_CLASSNAME);
+  canvas.classList.remove("cursor__fill");
+  canvas.classList.add("cursor__brush");
 }
 
 function handleCanvasClick() {
